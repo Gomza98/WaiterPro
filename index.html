@@ -42,15 +42,18 @@
             justify-content: space-between;
             gap: 30px;
         }
+        .profile-photo {
+            text-align: center;
+        }
         .profile-info img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             border: 4px solid #ddd;
-            margin-right: 30px;
         }
         .profile-details {
             flex: 1;
+            min-width: 300px;
         }
         .profile-details h2 {
             color: #444;
@@ -73,6 +76,7 @@
             text-decoration: none;
             transition: background-color 0.3s ease;
             margin-top: 20px;
+            cursor: pointer;
         }
         .contact-btn:hover {
             background-color: #45a049;
@@ -111,12 +115,42 @@
         .section p {
             font-size: 18px;
             color: #555;
+            margin-bottom: 10px;
+        }
+        .skills-list {
+            list-style-type: none;
+            margin-top: 10px;
+        }
+        .skills-list li {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .skills-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
         }
         footer {
             text-align: center;
             margin-top: 30px;
             font-size: 14px;
             color: #888;
+        }
+        @media (max-width: 600px) {
+            .profile-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .profile-photo {
+                margin-bottom: 20px;
+            }
+            .profile-details {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -131,7 +165,9 @@
 
         <!-- Profile Information Section -->
         <div class="profile-info">
-            <img src="https://via.placeholder.com/150" alt="Profile Picture">
+            <div class="profile-photo">
+                <img src="/api/placeholder/150/150" alt="Profile Picture">
+            </div>
             <div class="profile-details">
                 <h2>Gomolemo Mmako</h2>
                 <p><strong>Email:</strong> G.mmako@example.com</p>
@@ -153,16 +189,18 @@
         <!-- Experience Section -->
         <div class="section">
             <h3 class="section-title">Professional Experience</h3>
-            <p>John has been working at various high-end restaurants and bars for 2 years, providing excellent service in high-pressure environments.</p>
+            <p>Gomolemo has been working at various high-end restaurants and bars for 2 years, providing excellent service in high-pressure environments.</p>
         </div>
 
         <!-- Skills Section -->
         <div class="section">
             <h3 class="section-title">Skills</h3>
-            <p>• Exceptional customer service</p>
-            <p>• Fluent in English and French</p>
-            <p>• Knowledge of wine and cocktails</p>
-            <p>• Fast and efficient in high-paced environments</p>
+            <ul class="skills-list">
+                <li>Exceptional customer service</li>
+                <li>Fluent in English and French</li>
+                <li>Knowledge of wine and cocktails</li>
+                <li>Fast and efficient in high-paced environments</li>
+            </ul>
         </div>
 
         <!-- Footer -->
